@@ -1,27 +1,38 @@
-/target/
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
+#idea
 .idea
-*.iws
 *.iml
 *.ipr
-*.yml
+*.iws
+out
 
-### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-/test-classes
+#gradle
+.gradle
+build
+bin
+gradle.properties
+
+
+#eclipse
+.classpath
+.project
+.settings
+classes
+
+#log
+logs
+
+## fontend
+bower_components
+node_modules
+
+# git
+*.orig
+
+
+package-lock.json
+
+resources-*
+
+target
+
+stdout.log
