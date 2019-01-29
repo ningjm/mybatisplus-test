@@ -11,6 +11,13 @@ import com.baomidou.mybatisplus.enums.IdType;
  * @author: Mr.Ning
  * @create: 2019-01-29 09:27
  **/
+
+/**
+ *
+ *
+ * 注意：如果属性名为：my_email,那么他的get，set方法的命名要为setMy_Email(),getMy_Email()。不能为setMyEmail(),getMyEmail()。不然plus会报错
+ */
+
 //@TableName("tbl_employee")        //配置文件配置了全局的表前缀策略配置 ,会在实体名前自动加上tbl_,就不用此注解了
 public class Employee {         //数据库表名为tbl_employee(带tbl前缀),可以在配置文件中配置加上tbl_前缀,就不用tableName了
 
@@ -25,7 +32,26 @@ public class Employee {         //数据库表名为tbl_employee(带tbl前缀),�
 
     private Integer gender ;
 
-    private Integer age ;
+    /**
+     *
+     * 如果是int类型，默认值为0，当没有为此字段赋值时，此字段也会有个0插入数据库。
+     * 如果是Integer类型，则为空，不会插入东西（生成sql时不会出现该字段）
+     * 特别注意：此数值一定要为Integer类型，不然update更新数据的时候会把你的数据改为0
+     *
+     */
+    private int age ;
+
+    @TableField(exist = false)      //exist = false ： DB表中没有此字段，我们可以排除它
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
     public Integer getId() {
         return id;
@@ -39,10 +65,10 @@ public class Employee {         //数据库表名为tbl_employee(带tbl前缀),�
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public String getMyEmail() {
+    public String getMy_Email() {
         return my_email;
     }
-    public void setMyEmail(String my_email) {
+    public void setMy_Email(String my_email) {
         this.my_email = my_email;
     }
     public Integer getGender() {
@@ -51,10 +77,10 @@ public class Employee {         //数据库表名为tbl_employee(带tbl前缀),�
     public void setGender(Integer gender) {
         this.gender = gender;
     }
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
     @Override
