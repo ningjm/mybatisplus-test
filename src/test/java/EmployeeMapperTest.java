@@ -1,3 +1,4 @@
+import com.baomidou.mybatisplus.mapper.Condition;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.mybatisplustest.beans.Employee;
@@ -164,6 +165,21 @@ public class EmployeeMapperTest {
         );
 
         System.out.println(employees);
+
+
+//        /**
+//         *  Condition条件构造器的用法===》跟EntityWrapper都是一样的继承了Wrapper,用法都是一样的
+//         */
+//        List list = employeeMapper.selectList(Condition.create()
+//                        .eq("last_name", "njm")
+//                        .or()   //or和orNew区别：使用or：SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee WHERE (last_name = ? OR last_name = ?)
+////                        .orNew() //SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee WHERE (last_name = ?) OR (last_name = ?)
+//                        .eq("last_name", "njm2")
+////                        .orderBy("age")     //正序
+////                        .orderAsc(Arrays.asList(new String[]{"age"}))     //正序
+//                        .orderDesc(Arrays.asList(new String[]{"age"}))  //倒序
+//        );
+//        System.out.println(list);
     }
 
     @Test
