@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0e2e464-b147-467f-b9c9-05c6c342c4ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mybatisplustest/beans/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mybatisplustest/beans/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/EmployeeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EmployeeMapperTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,14 +41,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="java" value="3233" />
+          <entry key="java" value="3464" />
           <entry key="properties" value="15" />
           <entry key="xml" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3233" />
+          <entry key="JAVA" value="3464" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="15" />
           <entry key="XML" value="54" />
@@ -74,11 +73,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/EmployeeMapperTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="161" column="32" lean-forward="true" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
+            <state relative-caret-position="309">
+              <caret line="160" column="46" selection-start-line="160" selection-start-column="46" selection-end-line="160" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4451#4467#0" expanded="true" />
+                <element signature="e#4508#4524#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,9 +172,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="158" />
+    <option name="y" value="234" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -278,7 +277,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548752575793" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548754879349" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -303,12 +302,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeeMapperTest.entityWrapper">
+  <component name="RunManager" selected="JUnit.EmployeeMapperTest.selectEntityWrapper">
     <configuration name="EmployeeMapperTest.del" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatisplus-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeMapperTest" />
       <option name="METHOD_NAME" value="del" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeMapperTest.delEntityWrapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatisplus-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeMapperTest" />
+      <option name="METHOD_NAME" value="delEntityWrapper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -324,50 +333,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeMapperTest.insertOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeMapperTest.selectEntityWrapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatisplus-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeMapperTest" />
-      <option name="METHOD_NAME" value="insertOne" />
+      <option name="METHOD_NAME" value="selectEntityWrapper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmployeeMapperTest.select" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmployeeMapperTest.updateEntityWrapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatisplus-test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EmployeeMapperTest" />
-      <option name="METHOD_NAME" value="select" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmployeeMapperTest.updateById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatisplus-test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EmployeeMapperTest" />
-      <option name="METHOD_NAME" value="updateById" />
+      <option name="METHOD_NAME" value="updateEntityWrapper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.EmployeeMapperTest.insertOne" />
-      <item itemvalue="JUnit.EmployeeMapperTest.updateById" />
-      <item itemvalue="JUnit.EmployeeMapperTest.select" />
       <item itemvalue="JUnit.EmployeeMapperTest.del" />
       <item itemvalue="JUnit.EmployeeMapperTest.entityWrapper" />
+      <item itemvalue="JUnit.EmployeeMapperTest.updateEntityWrapper" />
+      <item itemvalue="JUnit.EmployeeMapperTest.delEntityWrapper" />
+      <item itemvalue="JUnit.EmployeeMapperTest.selectEntityWrapper" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmployeeMapperTest.selectEntityWrapper" />
+        <item itemvalue="JUnit.EmployeeMapperTest.delEntityWrapper" />
+        <item itemvalue="JUnit.EmployeeMapperTest.updateEntityWrapper" />
         <item itemvalue="JUnit.EmployeeMapperTest.entityWrapper" />
         <item itemvalue="JUnit.EmployeeMapperTest.del" />
-        <item itemvalue="JUnit.EmployeeMapperTest.select" />
-        <item itemvalue="JUnit.EmployeeMapperTest.updateById" />
-        <item itemvalue="JUnit.EmployeeMapperTest.insertOne" />
       </list>
     </recent_temporary>
   </component>
@@ -381,23 +380,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1548725170393</updated>
-      <workItem from="1548725172196" duration="17902000" />
+      <workItem from="1548725172196" duration="19959000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EmployeeMapperTest_select - 2019.01.29 at 15h 19m 43s.xml">
-      <configuration name="EmployeeMapperTest.select" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EmployeeMapperTest_select - 2019.01.29 at 15h 32m 42s.xml">
-      <configuration name="EmployeeMapperTest.select" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EmployeeMapperTest_select - 2019.01.29 at 15h 33m 00s.xml">
-      <configuration name="EmployeeMapperTest.select" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EmployeeMapperTest_del - 2019.01.29 at 15h 42m 08s.xml">
-      <configuration name="EmployeeMapperTest.del" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EmployeeMapperTest_del - 2019.01.29 at 15h 43m 41s.xml">
       <configuration name="EmployeeMapperTest.del" configurationId="JUnit" />
     </history-entry>
@@ -416,9 +403,21 @@
     <history-entry file="EmployeeMapperTest_entityWrapper - 2019.01.29 at 17h 01m 49s.xml">
       <configuration name="EmployeeMapperTest.entityWrapper" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EmployeeMapperTest_entityWrapper - 2019.01.29 at 17h 03m 00s.xml">
+      <configuration name="EmployeeMapperTest.entityWrapper" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeMapperTest_updateEntityWrapper - 2019.01.29 at 17h 20m 09s.xml">
+      <configuration name="EmployeeMapperTest.updateEntityWrapper" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeMapperTest_delEntityWrapper - 2019.01.29 at 17h 24m 02s.xml">
+      <configuration name="EmployeeMapperTest.delEntityWrapper" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="EmployeeMapperTest_selectEntityWrapper - 2019.01.29 at 17h 34m 08s.xml">
+      <configuration name="EmployeeMapperTest.selectEntityWrapper" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17902000" />
+    <option name="totallyTimeSpent" value="19959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -593,11 +592,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EmployeeMapperTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="161" column="32" lean-forward="true" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
+        <state relative-caret-position="309">
+          <caret line="160" column="46" selection-start-line="160" selection-start-column="46" selection-end-line="160" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4451#4467#0" expanded="true" />
+            <element signature="e#4508#4524#0" expanded="true" />
           </folding>
         </state>
       </provider>

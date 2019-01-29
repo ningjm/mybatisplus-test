@@ -8,10 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @program: mybatisplus-EmployeeMapperTest
@@ -141,7 +138,7 @@ public class EmployeeMapperTest {
      * 条件构造器EntityWrapper
      */
     @Test
-    public void entityWrapper(){
+    public void selectEntityWrapper(){
 
         //分页查询
         //===>SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee WHERE (id BETWEEN ? AND ? AND last_name = ?)
@@ -161,9 +158,35 @@ public class EmployeeMapperTest {
                         .or()   //or和orNew区别：使用or：SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee WHERE (last_name = ? OR last_name = ?)
 //                        .orNew() //SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee WHERE (last_name = ?) OR (last_name = ?)
                         .eq("last_name", "njm2")
+//                        .orderBy("age")     //正序
+//                        .orderAsc(Arrays.asList(new String[]{"age"}))     //正序
+                        .orderDesc(Arrays.asList(new String[]{"age"}))  //倒序
         );
 
         System.out.println(employees);
+    }
+
+    @Test
+    public void updateEntityWrapper(){
+        //使用条件构造器进行更新操作
+
+        Employee employee  = new Employee();
+        employee.setMy_Email("njm3@qq.com");
+        employee.setLastName("njm3");
+
+        Integer num = employeeMapper.update(employee, new EntityWrapper<Employee>()
+                .eq("id", 8)
+        );
+        System.out.println(num);
+    }
+
+    @Test
+    public void delEntityWrapper(){
+        //使用条件构造器进行删除操作
+        Integer num = employeeMapper.delete(new EntityWrapper<Employee>()
+                .eq("id", 3)
+        );
+        System.out.println(num);
     }
 
 }
