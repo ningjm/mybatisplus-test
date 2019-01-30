@@ -100,11 +100,18 @@ public class EmployeeMapperTest {
 //        System.out.println(employees);
 
 
-        //分页查询，注意：此方法是内存分页（从DB查询符合条件的全部数据下来，再进行内存分页，而非limit物理分页）,而且没有帮我们封装页码，有没下一页之类的
-        //  ===>SELECT id,last_name AS lastName,email AS my_email,gender,age FROM tbl_employee      没有limit
-        //不要使用此方法，使用mybatis的pageHelper，或者mybatis-plus的另一个分页插件
-//        List<Employee> employees = employeeMapper.selectPage<Employee>(new Page(2, 2), null);
-//        System.out.println(employees);
+        //此方法需要在配置文件注册分页插件,不然默认就是内存分页，而我们需要的是物理分页
+        Page<Employee> page  = new Page<Employee>(2,2);
+        List<Employee> employees = employeeMapper.selectPage(page, null);
+        page.setRecords(employees);     //将数据插入page，然后返回page给前端
+
+        System.out.println("总条数：" +  page.getTotal());
+        System.out.println("总页数：" +  page.getPages());
+        System.out.println("当前页数：" +  page.getCurrent());
+        System.out.println("是否有上一页：" +  page.hasPrevious());
+        System.out.println("是否有下一页：" +  page.hasNext());
+
+        System.out.println(page);
 
     }
 

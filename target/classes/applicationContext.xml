@@ -41,6 +41,14 @@
 		
 		<!-- 注入全局MP策略配置 -->
 		<property name="globalConfig" ref="globalConfiguration"></property>
+
+		<!--插件注册-->
+		<property name="plugins">
+			<list>
+				<!--注册分页插件-->
+				<bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor"></bean>
+			</list>
+		</property>
 	</bean>
 	
 	<!-- 定义MybatisPlus的全局策略配置-->

@@ -15,4 +15,5 @@ import com.mybatisplustest.beans.Employee;
  * 注意：BaseMapper<Good_Employee>要指定具体的类，不能为：BaseMapper<T>
  */
 public interface EmployeeMapper extends BaseMapper<Employee> {
+    int del(int a); //mybatisX 插件快速开发
 }
