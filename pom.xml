@@ -10,14 +10,14 @@
 
 
     <!--Mybatis 及 Mybatis-Spring 依赖请勿加入项目配置，以免引起版本冲突！！！-->
-    <!--Mybatis-Plus 会自动帮你维护-->
+    <!--Mybatis-Plus 会自动帮你维护2.3-->
 
     <dependencies>
         <!-- mp 依赖 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
-            <version>2.3</version>
+            <version>3.0.1</version>
         </dependency>
         <!--junit -->
         <dependency>
@@ -25,12 +25,12 @@
             <artifactId>junit</artifactId>
             <version>4.9</version>
         </dependency>
-        <!-- log4j -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
         <!-- c3p0 -->
         <dependency>
             <groupId>com.mchange</groupId>

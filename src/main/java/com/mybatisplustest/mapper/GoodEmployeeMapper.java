@@ -1,6 +1,6 @@
 package com.mybatisplustest.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mybatisplustest.beans.Good_Employee;
 
 /**

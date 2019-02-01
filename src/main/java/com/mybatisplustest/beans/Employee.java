@@ -1,9 +1,9 @@
 package com.mybatisplustest.beans;
 
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
-import com.baomidou.mybatisplus.enums.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 
 /**
  * @program: mybatisplus-test
@@ -18,13 +18,14 @@ import com.baomidou.mybatisplus.enums.IdType;
  * 注意：如果属性名为：my_email,那么他的get，set方法的命名要为setMy_Email(),getMy_Email()。不能为setMyEmail(),getMyEmail()。不然plus会报错
  */
 
-//@TableName("tbl_employee")        //配置文件配置了全局的表前缀策略配置 ,会在实体名前自动加上tbl_,就不用此注解了
+@TableName("tbl_employee")        //配置文件配置了全局的表前缀策略配置 ,会在实体名前自动加上tbl_,就不用此注解了
 public class Employee {         //数据库表名为tbl_employee(带tbl前缀),可以在配置文件中配置加上tbl_前缀,就不用tableName了
 
     //在配置文件加上<!-- 全局的主键策略 -->，所以可以忽略此注解
-//    @TableId(value = "id",type = IdType.AUTO)       //如果BD字段和实体字段一致，可去掉value = "id",重点是type = IdType.AUTO指定该字段为自动增长
+    @TableId(value = "id",type = IdType.AUTO)       //如果BD字段和实体字段一致，可去掉value = "id",重点是type = IdType.AUTO指定该字段为自动增长
     private Integer id ;    //数据库自增id
 
+    @TableField("last_name")
     private String lastName;    //数据库名为last_name(带下划线),会自动加上下划线
 
     @TableField("email")

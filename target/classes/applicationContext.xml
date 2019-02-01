@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	
 	
 	<!-- 数据源 -->
@@ -30,47 +31,54 @@
 	
 	<!--  配置SqlSessionFactoryBean 
 		Mybatis提供的: org.mybatis.spring.SqlSessionFactoryBean
-		MP提供的:com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean
+		MP2.0提供的:com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean
+		3.0:com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean
 	 -->
-	<bean id="sqlSessionFactoryBean" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+	<bean id="sqlSessionFactoryBean" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
 		<!-- 数据源 -->
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 		<!-- 别名处理 -->
 		<property name="typeAliasesPackage" value="com.mybatisplustest.beans"></property>
-		
-		<!-- 注入全局MP策略配置 -->
-		<property name="globalConfig" ref="globalConfiguration"></property>
+
+		<!--暂时找不到spring xml注入globalConfig（全局策略配置）的方式，所以先不用-->
+		<!--建议用springboot-->
+		<!--&lt;!&ndash; 注入全局MP策略配置 &ndash;&gt;-->
+		<!--<property name="globalConfig" ref="globalConfiguration"></property>-->
 
 		<!--插件注册-->
 		<property name="plugins">
 			<list>
-				<!--注册分页插件-->
-				<bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor"></bean>
+				<!--注册分页插件(2.0位置（com.baomidou.mybatisplus.plugins.PaginationInterceptor），下面是3.0的)-->
+				<bean class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor"></bean>
 			</list>
 		</property>
 	</bean>
+
+	<!--扫描mapper-->
+	<!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+		<!--<property name="basePackage" value="com.baomidou.mybatisplus.samples.quickstart.mapper"/>-->
+	<!--</bean>-->
 	
-	<!-- 定义MybatisPlus的全局策略配置-->
-	<bean id ="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-		<!-- 在2.3版本以后，dbColumnUnderline 默认值就是true -->
-		<!--<property name="dbColumnUnderline" value="true"></property>-->
+	<!-- 定义MybatisPlus的全局策略配置2.0:com.baomidou.mybatisplus.entity.GlobalConfiguration-->
+	<!--<bean id ="globalConfiguration" class="com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig">-->
+		<!--&lt;!&ndash; 在2.3版本以后，dbColumnUnderline 默认值就是true &ndash;&gt;-->
+		<!--&lt;!&ndash;<property name="dbColumnUnderline" value="true"></property>&ndash;&gt;-->
 
-		<!-- 全局的主键策略 -->
-		<property name="idType" value="0"></property>
+		<!--&lt;!&ndash; 全局的主键策略 &ndash;&gt;-->
+		<!--<property name="idType"><util:constant static-field="com.baomidou.mybatisplus.annotation.IdType.AUTO"/></property>-->
 
-		<!--AUTO(0, "数据库ID自增"),-->
-		<!--INPUT(1, "用户输入ID"),-->
-		<!--ID_WORKER(2, "全局唯一ID"),-->
-		<!--UUID(3, "全局唯一ID"),-->
-		<!--NONE(4, "该类型为未设置主键类型"),-->
-		<!--ID_WORKER_STR(5, "字符串全局唯一ID");-->
+		<!--&lt;!&ndash;AUTO(0, "数据库ID自增"),&ndash;&gt;-->
+		<!--&lt;!&ndash;INPUT(1, "用户输入ID"),&ndash;&gt;-->
+		<!--&lt;!&ndash;ID_WORKER(2, "全局唯一ID"),&ndash;&gt;-->
+		<!--&lt;!&ndash;UUID(3, "全局唯一ID"),&ndash;&gt;-->
+		<!--&lt;!&ndash;NONE(4, "该类型为未设置主键类型"),&ndash;&gt;-->
+		<!--&lt;!&ndash;ID_WORKER_STR(5, "字符串全局唯一ID");&ndash;&gt;-->
 
-		<!-- 全局的表前缀策略配置 ,会在实体名前自动加上tbl_-->
-		<property name="tablePrefix" value="tbl_"></property>
+		<!--&lt;!&ndash; 全局的表前缀策略配置 ,会在实体名前自动加上tbl_&ndash;&gt;-->
+		<!--<property name="tablePrefix" value="tbl_"></property>-->
 
-	</bean>
-	
+	<!--</bean>-->
 	
 	
 	
